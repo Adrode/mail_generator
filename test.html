@@ -7,16 +7,32 @@
 
 <body>
 
+<div>
+    <table id="topHeaderTable">
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div>
+                        <div>
+                            Witaj,
+                            <b>alias1</b>
+                            <a href="/logout">Wyloguj</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <div id="main-container" class="container-fluid">
 
     <div class="header clearfix">
         <div class="logo">
-            <span>CRM</span>
-        </div>
-
-        <div class="user-info">
-            <span>Zalogowany jako:</span>
-            <strong>operator01</strong>
+            <span>CLAIMS</span>
         </div>
     </div>
 
@@ -99,6 +115,29 @@
             <div class="panel-heading">
                 <h2>Dane klienta</h2>
             </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rodzaj </th>
+                        <th>Dostawca </th>
+                        <th>Zawarto </th>
+                        <th>Wygasa </th>
+                        <th>Polisa </th>
+                        <th>Kontrakt </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="noborder">
+                        <td>OC AC </td>
+                        <td>Jakiś ubezpieczyciel </td>
+                        <td>20-20-2020 </td>
+                        <td>21-21-2121 </td>
+                        <td>Klient </td>
+                        <td>X </td>
+                    </tr>
+                </tbody>
+            </table>
 
             <div class="panel-body">
 
@@ -242,6 +281,79 @@
             <div class="panel-body">
 
                 <div class="event-data">
+                    <table class="modForm form panel">
+                        <tbody>
+                            <tr class="noborder">
+                                <td class="form_header">Umowa</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="tdLabel">Zarządzanie likwidacją szkód:</td>
+                                <td>Tak</td>
+                            </tr>
+                            <tr>
+                                <td class="tdLabel">Stauts umowy:</td>
+                                <td>aktywna</td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="tdLabel">Data akt/zd:</td>
+                                <td>10-10-2026 /
+                                    <label>11-10-2026</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="modForm form panel">
+                        <tbody>
+                            <tr>
+                                <td class="form_header">Użytkownik</td>
+                            </tr>
+                            <tr class="noborder">
+                                <td class="tdLabel">Nazwa</td>
+                                <td>
+                                    <a href="google.com">Adrian Woźniak</a>
+                                </td>
+                            </tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="tdLabel">
+                                    <label class="label">Miasto:</label>
+                                </td>
+                                <td>
+                                    <label>Wrocław</label>
+                                </td>
+                            </tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="tdLabel">Klient:</td>
+                                <td>
+                                    <a href="google.com">AW COMPANY LTD.</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdLabel">
+                                    <a href="google.com">Segment</a>
+                                </td>
+                                <td>Jakiś tam</td>
+                            </tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr>
+                                <td class="tdLabel">Flotowiec:</td>
+                                <td>
+                                    <a href="google.com">Adrian Woźniak X</a>, mail: <a href="mailto:x@example.com">x@example.com</a>, tel:999888777<br>
+                                    <a href="google.com">Adrian Woźniak Y</a>, mail: <a href="mailto:y@example.com">y@example.com</a>, tel:999888777<br>
+                                    <a href="google.com">Adrian Woźniak Z</a>, mail: <a href="mailto:z@example.com">z@example.com</a>, tel:999888777<br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <table class="table table-bordered">
 
@@ -263,7 +375,27 @@
                                 </td>
 
                                 <td class="value-cell">
-                                    <span>Wrocław, ul. Legnicka</span>
+                                    <span>Wrocław, ul. Podwale</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdLabel">
+                                    Nr rejestracyjny
+                                </td>
+
+                                <td>
+                                    <a href="kekw.example">DSR65420</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdLabel">
+                                    <label class="label">Nr nadwozia:</label>
+                                </td>
+
+                                <td>
+                                    <label>KA8123HJEDH978DA782</label>
                                 </td>
                             </tr>
 
@@ -274,6 +406,148 @@
 
                                 <td class="value-cell">
                                     <span>Kolizja drogowa</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdLabel">
+                                    <label class="label">Pojazd:</label>
+                                </td>
+
+                                <td>
+                                    <label>Opel Astra H GTC 1.6 2005 3 - drzwiowa</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdLabel">
+                                    <label class="label">Data pierwszej rejestracji:</label>
+                                </td>
+
+                                <td>
+                                    <label>05.05.2005/2005</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tdLabel">
+                                    <label class="label">Ubezpieczenie zakupione przez:</label>
+                                </td>
+
+                                <td>
+                                    <label>Klienta</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <table class="carInsuranceClaimBasicDataTable">
+                                        <tbody>
+                                            <tr></tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td class="tdLabel">Serwis</td>
+                                                <td>
+                                                    <a id="serviceCompanyHref">Toyota Bielany</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">Oddział:</td>
+                                                <td>
+                                                    <label>Czekoladowa 10, Bielany Wrocławskie</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">Numer sprawy:</td>
+                                                <td>
+                                                    <span id="authorization_number_id">123487565</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <label class="label">Nazwa ZU:</label>
+                                                </td>
+                                                <td>
+                                                    <label>Powszechny Zakład Ubezpieczeń S.A.</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <label class="label">Nr szkody:</label>
+                                                </td>
+                                                <td>
+                                                    <label>Numer1123Szkody</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <label class="label">Sposób rozliczania:</label>
+                                                </td>
+                                                <td>
+                                                    <label>AC ([OC AC] kekw)</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <label class="label">Typ szkody:</label>
+                                                </td>
+                                                <td>
+                                                    <label>Szkoda częściowa</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <label class="label">Data zdarzenia:</label>
+                                                </td>
+                                                <td>
+                                                    <label>11-10-2026</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <div>
+                                                        <div>Opis zdarzenia:</div>
+                                                        <div>Uderzenie kołem w krawężnik</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <div>
+                                                        <div>Treść zlecenia:</div>
+                                                        <div>Uderzenie kołem w krawężnik</div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr></tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td class="tdLabel">
+                                                    <label class="label">Osoba do kontaktu:</label>
+                                                </td>
+                                                <td>
+                                                    <label>Adrian Woźniak 999888777</label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="form_section">
+                                                    <span class="label"> Uszkodzenia </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="form_space"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    felga przednia prawa, błotnik przedni prawy, próg prawy
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </td>
                             </tr>
 
