@@ -208,7 +208,7 @@ def get_client_data(soup):
   return client_data
 
 
-def parse_html(html):
+def parse_html(html=test_html):
   soup = BeautifulSoup(html, "html.parser")
 
   alias = get_alias(soup)
@@ -219,9 +219,65 @@ def parse_html(html):
   contract_data = get_contract_data(soup)
   client_data = get_client_data(soup)
 
-  # with open("html_result.txt", "w", encoding="UTF-8") as f:
-  #   f.write(str(registration_number))
+  user_claim_contact_data = car_insurance_claim_data["contact_person"].split(" ")
+  if len(user_claim_contact_data) == 3:
+    contact_number = user_claim_contact_data[2]
+  else:
+    contact_number = None
 
-  print(client_data)
+  if "oc" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower():
+    message_title = f"{vehicle_data['registration_number']} / {alias} / OC sprawcy"
+    message_header = "<b>LIKWIDACJA Z POLISY OC SPRAWCY</b><br><br>"
+    message_body = f"Polisa OC - treść zlecenia;<br>kontakt do użytkownika: <b>{contact_number}</b>"
+  elif (
+    "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
+    and ("klient" in insurance_data["insurance_source_1"].lower() or "klient" in insurance_data["insurance_source_2"].lower())
+    and "efl" in client_data["client_company_name"].lower()
+  ):
+    message_title = f"{vehicle_data['registration_number']} / {alias} / AC EFL"
+    message_header = "<b>LIKWIDACJA Z POLISY AC EFL</b><br><br>"
+    message_body = f"Polisa AC Klienta - treść zlecenia;<br>kontakt do użytkownika: <b>{contact_number}</b>"
+  elif (
+    "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
+    and ("klient" in insurance_data["insurance_source_1"].lower() or "klient" in insurance_data["insurance_source_2"].lower())
+    and "optima-fleet" in str(client_data["fleet_managers_contat_details"]).lower()
+  ):
+    message_title = f"{vehicle_data['registration_number']} / {alias} / AC IMPEL"
+    message_header = "<b>LIKWIDACJA Z POLISY AC IMPEL</b><br><br>"
+    message_body = f"Polisa AC Klienta - treść zlecenia;<br>kontakt do użytkownika: <b>{contact_number}</b>"
+  elif (
+    "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
+    and ("klient" in insurance_data["insurance_source_1"].lower() or "klient" in insurance_data["insurance_source_2"].lower())
+  ):
+    message_title = f"{vehicle_data['registration_number']} / {alias} / AC klienta"
+    message_header = "<b>LIKWIDACJA Z POLISY AC KLIENTA</b><br><br>"
+    message_body = f"Polisa AC Klienta - treść zlecenia;<br>kontakt do użytkownika: <b>{contact_number}</b>"
+  elif (
+    "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
+    and ("carefleet" in insurance_data["insurance_source_1"].lower() or "carefleet" in insurance_data["insurance_source_2"].lower())
+  ):
+    insurer = insurance_data["insurer_name"].lower()
+    message_title = f"{vehicle_data['registration_number']} / {alias} / AC Carefleet"
+    message_body = f"Polisa AC Carefleet - treść zlecenia;<br>kontakt do użytkownika: <b>{contact_number}</b>"
+    if "ergo hestia" in insurer:
+      message_header = "<b>LIKWIDACJA Z POLISY AC Carefleet / Ergo Hestia</b><br><br>"
+    elif "generali" in insurer:
+      message_header = "<b>LIKWIDACJA Z POLISY AC Carefleet / Generali</b><br><br>"
+    elif "warta" in insurer:
+      message_header = "<b>LIKWIDACJA Z POLISY AC Carefleet / Warta</b><br><br>"
+    elif "interrisk" in insurer:
+      message_header = "<b>LIKWIDACJA Z POLISY AC Carefleet / Interrisk</b><br><br>"
+    elif "powszechny" in insurer:
+      message_header = "<b>LIKWIDACJA Z POLISY AC Carefleet / PZU</b><br><br>"
+  else:
+    message_header = "<b><style color='red'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</style></b><br><br>"
 
-parse_html(test_html)
+  response = {
+    "message_title": message_title,
+    "message_header": message_header,
+    "message_body": message_body
+  }
+  
+  return response
+
+parse_html()
