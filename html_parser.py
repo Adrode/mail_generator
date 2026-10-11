@@ -207,6 +207,40 @@ def get_client_data(soup):
 
   return client_data
 
+def parse_data_for_pdf(html=test_html):
+  soup = BeautifulSoup(html, "html.parser")
+
+  alias = get_alias(soup)
+  vehicle_data = get_vehicle_data(soup)
+  car_insurance_claim_data = get_car_insurance_claim_data(soup)
+  insurance_data = get_insurance_data(soup)
+  car_damage_data = get_car_damage_data(soup)
+  contract_data = get_contract_data(soup)
+  client_data = get_client_data(soup)
+
+  user_claim_contact_data = car_insurance_claim_data["contact_person"].split(" ")
+  if len(user_claim_contact_data) == 3:
+    contact_number = user_claim_contact_data[2]
+  else:
+    contact_number = ""
+
+  response = {
+    "registration_number": vehicle_data["registration_number"],
+    "VIN": vehicle_data["VIN"],
+    "make_and_model": vehicle_data["make_and_model"],
+    "phone_number": contact_number,
+    "client_name": client_data["client_company_name"],
+    "method_of_claim_settlement": car_insurance_claim_data["method_of_claim_settlement"],
+    "insurance_policy_number": "do uzupełnienia w przyszłości",
+    "insurer_name": insurance_data["insurer_name"],
+    "claim_number": car_insurance_claim_data["claim_number"],
+    "date_of_incident": car_insurance_claim_data["date_of_incident"],
+    "description_of_incident": car_insurance_claim_data["description_of_incident"],
+    "car_service_name": car_insurance_claim_data["car_service_name"],
+    "car_service_address": car_insurance_claim_data["car_service_address"]
+  }
+
+  return response
 
 def parse_html(html=test_html):
   soup = BeautifulSoup(html, "html.parser")
@@ -223,7 +257,7 @@ def parse_html(html=test_html):
   if len(user_claim_contact_data) == 3:
     contact_number = user_claim_contact_data[2]
   else:
-    contact_number = None
+    contact_number = ""
 
   if "oc" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower():
     message_title = f"{vehicle_data['registration_number']} / {alias} / OC sprawcy"
