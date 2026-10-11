@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
-with open("test.html", "r", encoding="UTF-8") as f:
-  test_html = f.read()
+# with open("test.html", "r", encoding="UTF-8") as f:
+#   test_html = f.read()
 
 def find_text(element):
   return lambda text: text and element in text
@@ -207,7 +207,7 @@ def get_client_data(soup):
 
   return client_data
 
-def parse_data_for_pdf(html=test_html):
+def parse_data_for_pdf(html):
   soup = BeautifulSoup(html, "html.parser")
 
   alias = get_alias(soup)
@@ -242,7 +242,7 @@ def parse_data_for_pdf(html=test_html):
 
   return response
 
-def parse_html(html=test_html):
+def parse_html(html):
   soup = BeautifulSoup(html, "html.parser")
 
   alias = get_alias(soup)
@@ -313,5 +313,3 @@ def parse_html(html=test_html):
   }
   
   return response
-
-parse_html()

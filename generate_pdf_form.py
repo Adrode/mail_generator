@@ -1,8 +1,8 @@
 from pypdf import PdfReader, PdfWriter
 from html_parser import parse_data_for_pdf
 
-def fill_out_pdf_form():
-  data_for_pdf = parse_data_for_pdf()
+def fill_out_pdf_form(html):
+  data_for_pdf = parse_data_for_pdf(html)
 
   reader = PdfReader("claim_form.pdf")
   writer = PdfWriter()

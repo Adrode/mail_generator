@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 33, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\generate_outlook_template.py", line 10, in generate_mail
+    fill_out_pdf_form(html)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\dev\mail_bridge\generate_pdf_form.py", line 5, in fill_out_pdf_form
+    data_for_pdf = parse_data_for_pdf()
+TypeError: parse_data_for_pdf() missing 1 required positional argument: 'html'
