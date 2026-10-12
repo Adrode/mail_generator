@@ -18,7 +18,7 @@ def generate_mail(html):
   mail.To = "somebody@example.com"
 
   def check_if_file_exists():
-    my_file = Path("./out-filled-form.pdf")
+    my_file = Path("./new_claim.pdf")
 
     start_time = time.time()
     max_duration_time = 10
@@ -34,4 +34,4 @@ def generate_mail(html):
 
   mail.Display()
 
-  os.remove("out-filled-form.pdf")
+  os.remove("new_claim.pdf")
