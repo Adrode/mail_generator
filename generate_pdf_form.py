@@ -29,9 +29,6 @@ def fill_out_pdf_form(html):
     auto_regenerate=False,
   )
 
-  # if "/AcroForm" in writer._root_object:
-  #   del writer._root_object["/AcroForm"]
-
   writer.remove_annotations(subtypes="/Widget")
 
   with open("new_claim.pdf", "wb") as output_file:
