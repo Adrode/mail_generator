@@ -2,7 +2,7 @@ import sys
 import json
 import struct
 import traceback
-from generate_outlook_template import generate_mail
+from outlook_generator.create_outlook_template import generate_mail
 
 def read_message():
     raw_length = sys.stdin.buffer.read(4)
