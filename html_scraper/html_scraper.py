@@ -362,6 +362,8 @@ try:
         message_header = "<b>AC Carefleet / Interrisk</b><br><br>"
       elif "powszechny" in insurer:
         message_header = "<b>AC Carefleet / PZU</b><br><br>"
+      else:
+        message_header = "<b><style color='red'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</style></b><br><br>"
 
       message_body = f"<br><br>AC Carefleet - treść;<br>kontakt: <b>{contact_number}</b>"
     elif (
@@ -378,7 +380,7 @@ try:
 
     message_additional_info = []
     if datetime.strptime(contract_data["contract_end_date"], "%d-%m-%Y").date() <= datetime.now().date() + timedelta(days=60):
-      message_additional_info.append(f"<br><b>KONIEC KONTRAKTU: {contract_data["contract_end_date"]}</b>")
+      message_additional_info.append(f"<br><b><style color='red'>KONIEC KONTRAKTU: {contract_data["contract_end_date"]}</style></b>")
     if "nie" in contract_data["selected_claims_handling"].lower():
       message_additional_info.append(f"<br><b>BEZ ZARZĄDZANIA</b>")
     if "zdany" in contract_data["contract_status"].lower():

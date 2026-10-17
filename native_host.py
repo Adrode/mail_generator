@@ -3,6 +3,9 @@ import json
 import struct
 import traceback
 from datetime import datetime
+from pathlib import Path
+
+script_dir = Path(__file__).resolve().parent
 
 def read_message():
     raw_length = sys.stdin.buffer.read(4)
@@ -40,19 +43,24 @@ if message:
 
         from outlook_generator.create_outlook_template import generate_mail
 
+        response["stage"] = "validate_html"
+
+        html = message["message"]
+        if not html:
+            raise ValueError("No HTML was received")
+
         response["stage"] = "generate_mail"
         generate_mail(message["message"])
+
+        response["stage"] = "complete"
 
     except Exception as error:
         response["ok"] = False
         response["error"] = str(error)
 
-        with open("error_log.log", "a", encoding="UTF-8") as f:
+        with open(script_dir / "error_log.log", "a", encoding="UTF-8") as f:
             f.write(f"\n{datetime.now()} - ERROR:\n")
             f.write(traceback.format_exc())
             f.write("\n" + "-" * 60 + "\n")
 
-    send_message({
-        "reply": "Connection to Python works!" if response["ok"] else "Something went wrong",
-        "received": response
-    })
+    send_message(response)

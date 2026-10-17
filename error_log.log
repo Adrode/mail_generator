@@ -1,0 +1,119 @@
+
+2026-10-17 12:16:00.751017 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_bridge\html_scraper\html_scraper.py", line 309, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_bridge\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-10-17 12:24:23.172602 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 32, in generate_mail
+    mail = outlook.CreateItem(0)
+  File "<COMObject Outlook.Application>", line 2, in CreateItem
+pywintypes.com_error: (-2147418111, 'Wywołanie zostało odrzucone przez wywoływanego.', None, None)
+
+------------------------------------------------------------
+
+2026-10-17 12:24:23.722856 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 69, in generate_mail
+    file_path.unlink()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1042, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+PermissionError: [WinError 32] Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces: 'C:\\dev\\mail_bridge\\temporary_filled_forms\\123487565_claim_details.pdf'
+
+------------------------------------------------------------
+
+2026-10-17 12:24:24.452313 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 63, in generate_mail
+    add_attachments()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 54, in add_attachments
+    mail.Attachments.Add(str(second_attachment.resolve()))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<COMObject <unknown>>", line 2, in Add
+pywintypes.com_error: (-2147352567, 'Wystąpił wyjątek.', (4096, 'Microsoft Outlook', 'Nie można odnaleźć tego pliku. Sprawdź, czy ścieżka i nazwa pliku są poprawne.', None, 0, -2147024894), None)
+
+------------------------------------------------------------
+
+2026-10-17 12:32:12.433030 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 63, in generate_mail
+    add_attachments()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 53, in add_attachments
+    mail.Attachments.Add(str(claim_details_attachment.resolve()))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<COMObject <unknown>>", line 2, in Add
+pywintypes.com_error: (-2147352567, 'Wystąpił wyjątek.', (4096, 'Microsoft Outlook', 'Nie można odnaleźć tego pliku. Sprawdź, czy ścieżka i nazwa pliku są poprawne.', None, 0, -2147024894), None)
+
+------------------------------------------------------------
+
+2026-10-17 12:32:12.867766 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 63, in generate_mail
+    add_attachments()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 53, in add_attachments
+    mail.Attachments.Add(str(claim_details_attachment.resolve()))
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<COMObject <unknown>>", line 2, in Add
+pywintypes.com_error: (-2147352567, 'Wystąpił wyjątek.', (4096, 'Microsoft Outlook', 'Nie można odnaleźć tego pliku. Sprawdź, czy ścieżka i nazwa pliku są poprawne.', None, 0, -2147024894), None)
+
+------------------------------------------------------------
+
+2026-10-17 12:38:30.693660 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 63, in generate_mail
+    add_attachments()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 50, in add_attachments
+    raise TimeoutError("PDF files was not generated or found")
+TimeoutError: PDF files was not generated or found
+
+------------------------------------------------------------
+
+2026-10-17 12:38:31.222554 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 63, in generate_mail
+    add_attachments()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 50, in add_attachments
+    raise TimeoutError("PDF files was not generated or found")
+TimeoutError: PDF files was not generated or found
+
+------------------------------------------------------------
