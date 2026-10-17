@@ -121,11 +121,6 @@ try:
     return car_insurance_claim_data
 
   def get_insurance_data(soup):
-    if get_car_insurance_claim_data(soup):
-      insurer_name = get_car_insurance_claim_data(soup)["insurer_name"]
-    else:
-      insurer_name = None
-
     insurance_data = {
       "insurance_source_1": (
         soup.find("label", string=find_text_helper("Ubezpieczenie zakupione przez:"))
@@ -142,7 +137,7 @@ try:
         .select("td")[4]
         .get_text(strip=True)
       ),
-      "insurer_name": insurer_name
+      "insurer_name": get_car_insurance_claim_data(soup)["insurer_name"]
     }
 
     return insurance_data
@@ -259,28 +254,28 @@ try:
     assistance_data = get_assistance_data(soup)
     client_data = get_client_data(soup)
 
-    user_claim_contact_data = car_insurance_claim_data["contact_person"].split(" ")
+    user_claim_contact_data = car_insurance_claim_data["contact_person"].split()
     if len(user_claim_contact_data) <= 2:
       contact_number = ""
     else:
       contact_number = user_claim_contact_data[-1]
 
-    insurance_policy_number = car_insurance_claim_data["method_of_claim_settlement"].split(" ")[-1]
+    insurance_policy_number = car_insurance_claim_data["method_of_claim_settlement"].split()[-1]
     if insurance_policy_number[-1] == ")":
       insurance_policy_number = insurance_policy_number[0:-1]
 
     settlement_without_insurer = True if "naprawa na koszt klienta" in car_insurance_claim_data["method_of_claim_settlement"].lower() else False
   
     if "bmw" in vehicle_data["make_and_model"].lower() and "seri" in vehicle_data["make_and_model"].lower():
-      make_and_model = " ".join(vehicle_data["make_and_model"].split(" ")[:3])
+      make_and_model = " ".join(vehicle_data["make_and_model"].split()[:3])
     else:
-      make_and_model = " ".join(vehicle_data["make_and_model"].split(" ")[:2])
+      make_and_model = " ".join(vehicle_data["make_and_model"].split()[:2])
 
     response = {
       "case_number": car_insurance_claim_data["case_number"],
       "alias": alias,
       "car_service_name": car_insurance_claim_data["car_service_name"],
-      "car_service_address": " ".join(car_insurance_claim_data["car_service_address"].split(" ")[1:]),
+      "car_service_address": " ".join(car_insurance_claim_data["car_service_address"].split()[1:]),
       "date_of_incident": car_insurance_claim_data["date_of_incident"],
       "registration_number": vehicle_data["registration_number"],
       "make_and_model": make_and_model,
@@ -291,7 +286,7 @@ try:
       "phone_number": contact_number,
       "insurance_policy_number": "-" if settlement_without_insurer else insurance_policy_number,
       "claim_number": "-" if settlement_without_insurer else car_insurance_claim_data["claim_number"],
-      "method_of_claim_settlement": "Naprawa na koszt klienta" if settlement_without_insurer else car_insurance_claim_data["method_of_claim_settlement"].split(" ")[0],
+      "method_of_claim_settlement": "Naprawa na koszt klienta" if settlement_without_insurer else car_insurance_claim_data["method_of_claim_settlement"].split()[0],
       "insurer_name": "-" if settlement_without_insurer else insurance_data["insurer_name"],
       "assistance_package": assistance_data["assistance_package"],
       "replacement_vehicle_guarantee": "Tak" if assistance_data["assistance_package"] else "Nie",
@@ -313,7 +308,7 @@ try:
     contract_data = get_contract_data(soup)
     client_data = get_client_data(soup)
 
-    user_claim_contact_data = car_insurance_claim_data["contact_person"].split(" ")
+    user_claim_contact_data = car_insurance_claim_data["contact_person"].split()
     if len(user_claim_contact_data) <= 2:
       contact_number = ""
     else:
@@ -384,10 +379,9 @@ try:
     if "nie" in contract_data["selected_claims_handling"].lower():
       message_additional_info.append(f"<br><b>BEZ ZARZĄDZANIA</b>")
     if "zdany" in contract_data["contract_status"].lower():
-      message_additional_info.append(f"<br><b>ZDANY</b>")
+      message_additional_info.append(f"<br><b>ZDANY</b>")      
 
-    if message_additional_info != []:
-      message_additional_info = " ".join(message_additional_info)
+    message_additional_info = " ".join(message_additional_info)
 
     response = {
       "message_title": message_title,      

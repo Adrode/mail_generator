@@ -117,3 +117,167 @@ Traceback (most recent call last):
 TimeoutError: PDF files was not generated or found
 
 ------------------------------------------------------------
+
+2026-10-17 13:35:48.082613 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 96, in create_claim_details_pdf
+    c.save()
+    ~~~~~~^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfgen\canvas.py", line 1302, in save
+    self._doc.SaveToFile(self._filename, self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfbase\pdfdoc.py", line 210, in SaveToFile
+    raise TypeError('Cannot use %s as a filename or file' % repr(filename))
+TypeError: Cannot use WindowsPath('C:/dev/mail_bridge/pdf_generator/doc_form_temporary_file.pdf') as a filename or file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 31, in generate_mail
+    create_claim_details_pdf(data_for_pdf_forms)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 110, in create_claim_details_pdf
+    temporary_pdf.unlink()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1042, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+FileNotFoundError: [WinError 2] Nie można odnaleźć określonego pliku: 'C:\\dev\\mail_bridge\\pdf_generator\\doc_form_temporary_file.pdf'
+
+------------------------------------------------------------
+
+2026-10-17 13:35:51.884247 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 96, in create_claim_details_pdf
+    c.save()
+    ~~~~~~^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfgen\canvas.py", line 1302, in save
+    self._doc.SaveToFile(self._filename, self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfbase\pdfdoc.py", line 210, in SaveToFile
+    raise TypeError('Cannot use %s as a filename or file' % repr(filename))
+TypeError: Cannot use WindowsPath('C:/dev/mail_bridge/pdf_generator/doc_form_temporary_file.pdf') as a filename or file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 31, in generate_mail
+    create_claim_details_pdf(data_for_pdf_forms)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 110, in create_claim_details_pdf
+    temporary_pdf.unlink()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1042, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+FileNotFoundError: [WinError 2] Nie można odnaleźć określonego pliku: 'C:\\dev\\mail_bridge\\pdf_generator\\doc_form_temporary_file.pdf'
+
+------------------------------------------------------------
+
+2026-10-17 13:36:05.741888 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 96, in create_claim_details_pdf
+    c.save()
+    ~~~~~~^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfgen\canvas.py", line 1302, in save
+    self._doc.SaveToFile(self._filename, self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfbase\pdfdoc.py", line 210, in SaveToFile
+    raise TypeError('Cannot use %s as a filename or file' % repr(filename))
+TypeError: Cannot use WindowsPath('C:/dev/mail_bridge/pdf_generator/doc_form_temporary_file.pdf') as a filename or file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 31, in generate_mail
+    create_claim_details_pdf(data_for_pdf_forms)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 110, in create_claim_details_pdf
+    temporary_pdf.unlink()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1042, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+FileNotFoundError: [WinError 2] Nie można odnaleźć określonego pliku: 'C:\\dev\\mail_bridge\\pdf_generator\\doc_form_temporary_file.pdf'
+
+------------------------------------------------------------
+
+2026-10-17 13:37:24.091862 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 96, in create_claim_details_pdf
+    c.save()
+    ~~~~~~^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfgen\canvas.py", line 1302, in save
+    self._doc.SaveToFile(self._filename, self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfbase\pdfdoc.py", line 210, in SaveToFile
+    raise TypeError('Cannot use %s as a filename or file' % repr(filename))
+TypeError: Cannot use WindowsPath('C:/dev/mail_bridge/pdf_generator/claim_details_temporary_file.pdf') as a filename or file
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 31, in generate_mail
+    create_claim_details_pdf(data_for_pdf_forms)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 110, in create_claim_details_pdf
+    temporary_pdf.unlink()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\adria\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1042, in unlink
+    os.unlink(self)
+    ~~~~~~~~~^^^^^^
+FileNotFoundError: [WinError 2] Nie można odnaleźć określonego pliku: 'C:\\dev\\mail_bridge\\pdf_generator\\claim_details_temporary_file.pdf'
+
+------------------------------------------------------------
+
+2026-10-17 13:42:03.982252 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 31, in generate_mail
+    create_claim_details_pdf(data_for_pdf_forms)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 96, in create_claim_details_pdf
+    c.save()
+    ~~~~~~^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfgen\canvas.py", line 1302, in save
+    self._doc.SaveToFile(self._filename, self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfbase\pdfdoc.py", line 210, in SaveToFile
+    raise TypeError('Cannot use %s as a filename or file' % repr(filename))
+TypeError: Cannot use WindowsPath('C:/dev/mail_bridge/pdf_generator/claim_details_temporary_file.pdf') as a filename or file
+
+------------------------------------------------------------
+
+2026-10-17 13:42:42.135180 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_bridge\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\outlook_generator\create_outlook_template.py", line 31, in generate_mail
+    create_claim_details_pdf(data_for_pdf_forms)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\pdf_generator\create_pdf.py", line 97, in create_claim_details_pdf
+    c.save()
+    ~~~~~~^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfgen\canvas.py", line 1302, in save
+    self._doc.SaveToFile(self._filename, self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_bridge\env\Lib\site-packages\reportlab\pdfbase\pdfdoc.py", line 210, in SaveToFile
+    raise TypeError('Cannot use %s as a filename or file' % repr(filename))
+TypeError: Cannot use WindowsPath('C:/dev/mail_bridge/pdf_generator/claim_details_temporary_file.pdf') as a filename or file
+
+------------------------------------------------------------

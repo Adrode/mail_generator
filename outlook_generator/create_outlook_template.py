@@ -15,15 +15,25 @@ temporary_filled_forms_dir = script_dir.parent / "temporary_filled_forms"
 def generate_mail(html):
   data = parse_html(html)
   data_for_pdf_forms = parse_data_for_pdf_forms(html)
-  method_of_claim_settlement = data_for_pdf_forms["method_of_claim_settlement"]
   case_number = data_for_pdf_forms["case_number"]
+  method_of_claim_settlement = data_for_pdf_forms["method_of_claim_settlement"].lower()
+
+  if (
+    "ac" not in method_of_claim_settlement
+    and "oc" not in method_of_claim_settlement
+    and "naprawa na koszt klienta" not in method_of_claim_settlement
+  ):
+    raise ValueError(f"Unsupported method of claim settlement: {method_of_claim_settlement}")
+
+  compensation_authorization_file_name = None
+  documents_authorization_file_name = None
 
   create_claim_details_pdf(data_for_pdf_forms)
   claim_details_file_name = f"{case_number}_claim_details.pdf"
-  if "ac" in method_of_claim_settlement.lower():
+  if "ac" in method_of_claim_settlement:
     create_compensation_authorization_form(data_for_pdf_forms)
     compensation_authorization_file_name = f"{case_number}_compensation_authorization.pdf"
-  elif "oc" in method_of_claim_settlement.lower():
+  elif "oc" in method_of_claim_settlement:
     create_documents_authorization_form(data_for_pdf_forms)
     documents_authorization_file_name = f"{case_number}_documents_authorization.pdf"
 
@@ -35,6 +45,7 @@ def generate_mail(html):
   mail.HTMLBody = data["message_header"] + data["message_additional_info"] + data["message_body"]
 
   def add_attachments():
+    second_attachment = None
     claim_details_attachment = Path(temporary_filled_forms_dir / claim_details_file_name)
     if compensation_authorization_file_name:
       second_attachment = Path(temporary_filled_forms_dir / compensation_authorization_file_name)
@@ -45,7 +56,7 @@ def generate_mail(html):
     max_duration_time = 10
 
     if "naprawa na koszt klienta" not in method_of_claim_settlement:
-      while not claim_details_attachment.exists() and not second_attachment.exists():
+      while not claim_details_attachment.exists() or not second_attachment.exists():
         if time.time() - start_time > max_duration_time:
           raise TimeoutError("PDF files was not generated or found")
         time.sleep(1)
