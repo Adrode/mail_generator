@@ -8,7 +8,7 @@ browser.action.onClicked.addListener(async (tab) => {
                 action: "getHtml"
             }
         )
-        console.log("HTML received")
+        console.log("HTML sent")
     } catch (error) {
         console.log("Nie można pobrać HTML z tej strony. ERROR: ", error)
     }
@@ -20,8 +20,15 @@ browser.action.onClicked.addListener(async (tab) => {
                 message: content_response.html
             }
         );
+
+        if (!response.ok) {
+            console.error(
+                `BŁĄD ETAPU ${response.stage}: ${response.error}`
+            )
+        }
+
         console.log("Odpowiedź Pythona: ", response)
     } catch (error) {
-        console.error("BŁĄD NATIVE MESSAGE: ", error)
+        console.error("BŁĄD KOMUNIKACJI NATIVE MESSAGING: ", error)
     }
 });

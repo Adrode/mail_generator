@@ -1,2 +1,2 @@
 @echo off
-"C:\Users\adria\AppData\Local\Programs\Python\Python314\python.exe" -u "C:\dev\mail_bridge\native_messaging_host\native_host.py"
+"C:\dev\mail_bridge\env\Scripts\python.exe" -u "C:\dev\mail_bridge\native_host.py"
