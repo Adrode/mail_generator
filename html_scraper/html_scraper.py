@@ -317,7 +317,7 @@ try:
     if "oc" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower():
       message_title = f"{vehicle_data['registration_number']} / {alias} / OC sprawcy"
       message_header = "<b>OC SPRAWCY</b><br><br>"
-      message_body = f"<br><br>Polisa OC - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_body = f"<br>Polisa OC - treść;<br>kontakt: <b>{contact_number}</b>"
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("klient" in insurance_data["insurance_source_1"].lower() and "klient" in insurance_data["insurance_source_2"].lower())
@@ -325,7 +325,7 @@ try:
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC EFL"
       message_header = "<b>AC EFL</b><br><br>"
-      message_body = f"<br><br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("klient" in insurance_data["insurance_source_1"].lower() and "klient" in insurance_data["insurance_source_2"].lower())
@@ -333,20 +333,21 @@ try:
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC IMP"
       message_header = "<b>AC IMP</b><br><br>"
-      message_body = f"<br><br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("klient" in insurance_data["insurance_source_1"].lower() and "klient" in insurance_data["insurance_source_2"].lower())
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC klienta"
       message_header = "<b>AC KLIENTA</b><br><br>"
-      message_body = f"<br><br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("carefleet" in insurance_data["insurance_source_1"].lower() and "carefleet" in insurance_data["insurance_source_2"].lower())
     ):
       insurer = insurance_data["insurer_name"].lower()
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC Carefleet"
+      message_body = f"<br>AC Carefleet - treść;<br>kontakt: <b>{contact_number}</b>"
       if "ergo hestia" in insurer:
         message_header = "<b> AC Carefleet / Ergo Hestia</b><br><br>"
       elif "generali" in insurer:
@@ -358,33 +359,33 @@ try:
       elif "powszechny" in insurer:
         message_header = "<b>AC Carefleet / PZU</b><br><br>"
       else:
-        message_header = "<b><style color='red'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</style></b><br><br>"
-
-      message_body = f"<br><br>AC Carefleet - treść;<br>kontakt: <b>{contact_number}</b>"
+        message_title = f"{vehicle_data['registration_number']} / {alias}"
+        message_header = "<b><span style='color: red;'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</span></b><br><br>"
+        message_body = ""
     elif (
       "naprawa na koszt klienta" in car_insurance_claim_data["method_of_claim_settlement"].lower()
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / naprawa na koszt klienta"
       message_header = "<b>Naprawa na koszt klienta</b><br><br>"
-      message_body = f"<br><br>Naprawa na koszt klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_body = f"<br>Naprawa na koszt klienta - treść;<br>kontakt: <b>{contact_number}</b>"
     else:
       message_title = f"{vehicle_data['registration_number']} / {alias}"
-      message_header = "<b><style color='red'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</style></b><br><br>"
+      message_header = "<b><span style='color: red;'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</span></b><br><br>"
       message_body = ""
     
 
     message_additional_info = []
     if datetime.strptime(contract_data["contract_end_date"], "%d-%m-%Y").date() <= datetime.now().date() + timedelta(days=60):
-      message_additional_info.append(f"<br><b><style color='red'>KONIEC KONTRAKTU: {contract_data["contract_end_date"]}</style></b>")
+      message_additional_info.append(f"<b><span style='color: red;'>KONIEC KONTRAKTU: {contract_data["contract_end_date"]}</span></b><br>")
     if "nie" in contract_data["selected_claims_handling"].lower():
-      message_additional_info.append(f"<br><b>BEZ ZARZĄDZANIA</b>")
+      message_additional_info.append(f"<b><span style='color: red;'>BEZ ZARZĄDZANIA</span></b><br>")
     if "zdany" in contract_data["contract_status"].lower():
-      message_additional_info.append(f"<br><b>ZDANY</b>")      
+      message_additional_info.append(f"<b><span style='color: red;'>ZDANY</span></b><br>")
 
     message_additional_info = " ".join(message_additional_info)
 
     response = {
-      "message_title": message_title,      
+      "message_title": message_title,
       "message_header": message_header,
       "message_additional_info": message_additional_info,
       "message_body": message_body
