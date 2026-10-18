@@ -316,31 +316,31 @@ try:
 
     if "oc" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower():
       message_title = f"{vehicle_data['registration_number']} / {alias} / OC sprawcy"
-      message_header = "<b>OC SPRAWCY</b><br><br>"
-      message_body = f"<br>Polisa OC - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_header = "<b>OC SPRAWCY</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
+      message_body = f"<br>Polisa OC - treść;<br>kontakt: <b>{contact_number}</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget."
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("klient" in insurance_data["insurance_source_1"].lower() and "klient" in insurance_data["insurance_source_2"].lower())
       and "efl" in client_data["client_company_name"].lower()
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC EFL"
-      message_header = "<b>AC EFL</b><br><br>"
-      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_header = "<b>AC EFL</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
+      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget."
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("klient" in insurance_data["insurance_source_1"].lower() and "klient" in insurance_data["insurance_source_2"].lower())
       and "optima-fleet" in str(client_data["fleet_managers_contat_details"]).lower()
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC IMP"
-      message_header = "<b>AC IMP</b><br><br>"
-      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_header = "<b>AC IMP</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
+      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget."
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("klient" in insurance_data["insurance_source_1"].lower() and "klient" in insurance_data["insurance_source_2"].lower())
     ):
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC klienta"
-      message_header = "<b>AC KLIENTA</b><br><br>"
-      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b>"
+      message_header = "<b>AC KLIENTA<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.</b><br><br>"
+      message_body = f"<br>AC Klienta - treść;<br>kontakt: <b>{contact_number}</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget."
     elif (
       "ac" in car_insurance_claim_data["method_of_claim_settlement"][0:2].lower()
       and ("carefleet" in insurance_data["insurance_source_1"].lower() and "carefleet" in insurance_data["insurance_source_2"].lower())
@@ -349,18 +349,18 @@ try:
       message_title = f"{vehicle_data['registration_number']} / {alias} / AC Carefleet"
       message_body = f"<br>AC Carefleet - treść;<br>kontakt: <b>{contact_number}</b>"
       if "ergo hestia" in insurer:
-        message_header = "<b> AC Carefleet / Ergo Hestia</b><br><br>"
+        message_header = "<b> AC Carefleet / Ergo Hestia</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
       elif "generali" in insurer:
-        message_header = "<b>AC Carefleet / Generali</b><br><br>"
+        message_header = "<b>AC Carefleet / Generali</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
       elif "warta" in insurer:
-        message_header = "<b>AC Carefleet / Warta</b><br><br>"
+        message_header = "<b>AC Carefleet / Warta</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
       elif "interrisk" in insurer:
-        message_header = "<b>AC Carefleet / Interrisk</b><br><br>"
+        message_header = "<b>AC Carefleet / Interrisk</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
       elif "powszechny" in insurer:
-        message_header = "<b>AC Carefleet / PZU</b><br><br>"
+        message_header = "<b>AC Carefleet / PZU</b><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Quisque ultrices mauris turpis, vel finibus neque lobortis eget.<br><br>"
       else:
         message_title = f"{vehicle_data['registration_number']} / {alias}"
-        message_header = "<b><span style='color: red;'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</span></b><br><br>"
+        message_header = "<b><span style='color: red;'>UZUPEŁNIJ ZASADY LIKWIDACJI!</span></b><br><br>"
         message_body = ""
     elif (
       "naprawa na koszt klienta" in car_insurance_claim_data["method_of_claim_settlement"].lower()
@@ -370,7 +370,7 @@ try:
       message_body = f"<br>Naprawa na koszt klienta - treść;<br>kontakt: <b>{contact_number}</b>"
     else:
       message_title = f"{vehicle_data['registration_number']} / {alias}"
-      message_header = "<b><span style='color: red;'>UZUPEŁNIJ ZASADY LIKWIDACJI SZKODY RĘCZNIE!</span></b><br><br>"
+      message_header = "<b><span style='color: red;'>UZUPEŁNIJ ZASADY LIKWIDACJI!</span></b><br><br>"
       message_body = ""
     
 
