@@ -38,17 +38,21 @@ browser.action.onClicked.addListener(async (tab) => {
             console.error(
                 `STAGE ERROR ${response.stage}: ${response.error}`
             );
+            
+            browser.notifications.create({
+                type: "basic",
+                title: "Błąd działania rozszerzenia Mail Generator",
+                message: "Nie udało się poprawnie wygenerować wiadomości"
+            });
         }
 
         console.log("Python response:", response);
 
     } catch (error) {
         console.error(
-            "NATIVE MESSAGING COMMUNICATION ERROR:",
-            error
-        );
+            "NATIVE MESSAGING COMMUNICATION ERROR:", error
+        )
     } finally {
         isGenerating = false;
-        console.log("Mail generating is finished.");
     }
 });

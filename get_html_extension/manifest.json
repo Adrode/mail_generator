@@ -5,7 +5,8 @@
     "description": "Local mail generator",
     "permissions": [
         "tabs",
-        "nativeMessaging"
+        "nativeMessaging",
+        "notifications"
     ],
     "browser_specific_settings": {
         "gecko": {
