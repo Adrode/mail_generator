@@ -121,6 +121,21 @@ try:
     return car_insurance_claim_data
 
   def get_insurance_data(soup):
+    insurance_source_2_check = (
+      soup.find("th", string=find_text_helper("Polisa"))
+      .find_parent("table")
+      .find("tbody")
+      .find("tr")
+    )
+
+    insurance_source_2 = ""
+    if "wszystkie polisy" not in str(insurance_source_2_check).lower():
+      insurance_source_2 = (
+        insurance_source_2_check
+        .select("td")[4]
+        .get_text(strip=True)
+      )
+
     insurance_data = {
       "insurance_source_1": (
         soup.find("label", string=find_text_helper("Ubezpieczenie zakupione przez:"))
@@ -129,14 +144,7 @@ try:
         .find("label")
         .get_text(strip=True)
       ),
-      "insurance_source_2": (
-        soup.find("th", string=find_text_helper("Polisa"))
-        .find_parent("table")
-        .find("tbody")
-        .find("tr")
-        .select("td")[4]
-        .get_text(strip=True)
-      ),
+      "insurance_source_2": insurance_source_2,
       "insurer_name": get_car_insurance_claim_data(soup)["insurer_name"]
     }
 

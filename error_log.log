@@ -1,0 +1,111 @@
+
+2026-10-19 10:31:34.489364 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 313, in parse_html
+    insurance_data = get_insurance_data(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 125, in get_insurance_data
+    soup.find("th", string=find_text_helper("Polisa"))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ...<2 lines>...
+    .find("tr")
+    ~~~~~~~~~~~
+    .select("td")[4]
+    ~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+------------------------------------------------------------
+
+2026-10-19 10:35:00.262348 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 315, in parse_html
+    insurance_data = get_insurance_data(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 132, in get_insurance_data
+    if "wszystkie polisy" not in insurance_source_2_check.lower():
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'NoneType' object is not callable
+
+------------------------------------------------------------
+
+2026-10-19 10:35:43.504284 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 315, in parse_html
+    insurance_data = get_insurance_data(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 132, in get_insurance_data
+    if "wszystkie polisy" not in insurance_source_2_check.lower():
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'NoneType' object is not callable
+
+------------------------------------------------------------
+
+2026-10-19 10:36:14.097764 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 315, in parse_html
+    insurance_data = get_insurance_data(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 132, in get_insurance_data
+    if "wszystkie polisy" not in insurance_source_2_check.lower():
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'NoneType' object is not callable
+
+------------------------------------------------------------
+
+2026-10-19 10:36:58.039455 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 315, in parse_html
+    insurance_data = get_insurance_data(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 134, in get_insurance_data
+    insurance_source_2_check
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+    .find("td")[4]
+    ~~~~~~~~~~~^^^
+  File "C:\dev\mail_generator\env\Lib\site-packages\bs4\element.py", line 2484, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 4
+
+------------------------------------------------------------
+
+2026-10-19 10:37:08.656633 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 315, in parse_html
+    insurance_data = get_insurance_data(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 134, in get_insurance_data
+    insurance_source_2_check
+    ~~~~~~~~~~~~~~~~~~~~~~~~
+    .find("td")[4]
+    ~~~~~~~~~~~^^^
+  File "C:\dev\mail_generator\env\Lib\site-packages\bs4\element.py", line 2484, in __getitem__
+    return self.attrs[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 4
+
+------------------------------------------------------------
