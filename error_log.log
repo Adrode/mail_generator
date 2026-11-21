@@ -109,3 +109,147 @@ Traceback (most recent call last):
 KeyError: 4
 
 ------------------------------------------------------------
+
+2026-11-19 19:00:02.005739 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:05.580636 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:08.460053 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:09.431752 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:10.233792 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:10.901011 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:11.399609 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:39.512166 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
+
+2026-11-19 19:00:42.389101 - ERROR:
+Traceback (most recent call last):
+  File "C:\dev\mail_generator\native_host.py", line 53, in <module>
+    generate_mail(message["message"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\mail_generator\outlook_generator\create_outlook_template.py", line 16, in generate_mail
+    data = parse_html(html)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 312, in parse_html
+    alias = get_alias(soup)
+  File "C:\dev\mail_generator\html_scraper\html_scraper.py", line 11, in get_alias
+    .find_previous_sibling("b")
+     ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'find_previous_sibling'
+
+------------------------------------------------------------
